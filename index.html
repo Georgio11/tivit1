@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Koulen&family=Kristi&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <header class="header">
+                <h1 class="header_title">NEW <span> GAME ON</span></h1>
+                <img src="images/logo.png" alt="logo" class="logo">
+            </header>
+            <main class="main">
+                <div class="info">
+                    <p>CATCH YOUR LUCK IN AVIATOR</p>
+                    <p>450% BONUS <br> ON 1ST 3 DEPOSITS <br> ₹2,50,000  <span>up TO</span></p>
+                </div>
+                <div class="bonus">450% <br> bonus</div>
+            </main>
+            <footer class="footer">
+                <button class="btn">PLAY NOW</button>
+            </footer>
+        </div>
+        <div class="plain">
+            <img src="images/plain.png" alt="plain">
+        </div>
+        <div class="cloud">
+            <img src="images/cloud.png" alt="cloud">
+        </div>
+    </div>
+</body>
+
+<script>
+    let wrapper = document.querySelector(".wrapper");
+
+    function adaptationElements() {
+        const aspectRatio = window.innerWidth / window.innerHeight;
+        let aspectClass;
+
+        if (aspectRatio >= 2) {
+            aspectClass = 'modificate1';
+        } else if (aspectRatio >= 1.5) {
+            aspectClass = 'modificate2';
+        } else if (aspectRatio > 1) {
+            aspectClass = 'modificate3';
+        } else {
+            aspectClass = 'modificate4';
+        }
+
+        wrapper.className = `wrapper ${aspectClass}`;
+    }
+
+    adaptationElements();
+    window.addEventListener('resize', adaptationElements);
+</script>
+</html>
